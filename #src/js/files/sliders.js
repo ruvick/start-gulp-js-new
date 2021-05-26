@@ -40,6 +40,8 @@ if (sliderScrollItems.length > 0) {
 		const sliderScrollItem = sliderScrollItems[index];
 		const sliderScrollBar = sliderScrollItem.querySelector('.swiper-scrollbar');
 		const sliderScroll = new Swiper(sliderScrollItem, {
+			observer: true,
+			observeParents: true,
 			direction: 'vertical',
 			slidesPerView: 'auto',
 			freeMode: true,

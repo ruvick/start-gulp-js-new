@@ -33,15 +33,17 @@ let path = {
 		js: project_name + "/js/",
 		css: project_name + "/css/",
 		images: project_name + "/img/",
-		fonts: project_name + "/fonts/"
+		fonts: project_name + "/fonts/",
+		videos: project_name + "/videos/"
 	},
 	src: {
 		favicon: src_folder + "/img/favicon.{jpg,png,svg,gif,ico,webp}",
-		html: [src_folder + "/*.html", "!" + src_folder + "/_*.html"],
+		html: [src_folder + "/**/*.html", "!" + src_folder + "/_*.html"],
 		js: [src_folder + "/js/app.js", src_folder + "/js/vendors.js"],
 		css: src_folder + "/scss/style.scss",
 		images: [src_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}", "!**/favicon.*"],
-		fonts: src_folder + "/fonts/*.ttf"
+		fonts: src_folder + "/fonts/*.ttf",
+		videos: src_folder + "/videos/*.*"
 	},
 	watch: {
 		html: src_folder + "/**/*.html",
@@ -106,6 +108,7 @@ function js() {
 		.pipe(fileinclude())
 		.pipe(gulp.dest(path.build.js))
 		.pipe(uglify(/* options */))
+		.on('error', function (err) { console.log(err.toString()); this.emit('end'); })
 		.pipe(
 			rename({
 				suffix: ".min",
@@ -153,13 +156,18 @@ function favicon() {
 		)
 		.pipe(dest(path.build.html))
 }
+function videos() {
+	return src(path.src.videos)
+		.pipe(plumber())
+		.pipe(dest(path.build.videos))
+}
 function fonts_otf() {
 	return src('./' + src_folder + '/fonts/*.otf')
 		.pipe(plumber())
 		.pipe(fonter({
 			formats: ['ttf']
 		}))
-		.pipe(gulp.dest('./' + src_folder + +'/fonts/'));
+		.pipe(gulp.dest('./' + src_folder + '/fonts/'));
 }
 function fonts() {
 	src(path.src.fonts)
@@ -190,6 +198,74 @@ function fontstyle() {
 		})
 	}
 }
+
+/*
+function checkWeight(fontname) {
+  let weight = 400;
+  switch (true) {
+	 case /Thin/.test(fontname):
+		weight = 100;
+		break;
+	 case /ExtraLight/.test(fontname):
+		weight = 200;
+		break;
+	 case /Light/.test(fontname):
+		weight = 300;
+		break;
+	 case /Regular/.test(fontname):
+		weight = 400;
+		break;
+	 case /Medium/.test(fontname):
+		weight = 500;
+		break;
+	 case /SemiBold/.test(fontname):
+		weight = 600;
+		break;
+	 case /Semi/.test(fontname):
+		weight = 600;
+		break;
+	 case /Bold/.test(fontname):
+		weight = 700;
+		break;
+	 case /ExtraBold/.test(fontname):
+		weight = 800;
+		break;
+	 case /Heavy/.test(fontname):
+		weight = 700;
+		break;
+	 case /Black/.test(fontname):
+		weight = 900;
+		break;
+	 default:
+		weight = 400;
+	}
+	return weight;
+}
+function fontsStyle(done) {
+  let file_content = fs.readFileSync(source_folder + '/scss/fonts.scss');
+  fs.writeFile(source_folder + '/scss/fonts.scss', '', cb);
+  fs.readdir(path.build.fonts, function (err, items) {
+	 if (items) {
+		let c_fontname;
+		for (var i = 0; i < items.length; i++) {
+		  let fontname = items[i].split('.');
+		  fontname = fontname[0];
+		  let font = fontname.split('-')[0];
+		  let weight = checkWeight(fontname);
+		  if (c_fontname != fontname) {
+			 fs.appendFile(source_folder + '/scss/fonts.scss', '@include font("' + font + '", "' + fontname + '", "' + weight + '" , "normal");\r\n', cb);
+		  }
+		  c_fontname = fontname;
+		}
+	 }
+	});
+	done();
+}
+*/
+
+function infofile() {
+
+}
 function cb() { }
 function clean() {
 	return del(path.clean);
@@ -200,13 +276,15 @@ function watchFiles() {
 	gulp.watch([path.watch.js], js);
 	gulp.watch([path.watch.images], images);
 }
-let build = gulp.series(clean, fonts_otf, gulp.parallel(html, css, js, favicon, images), fonts, gulp.parallel(fontstyle));
+let build = gulp.series(clean, fonts_otf, gulp.parallel(html, css, js, favicon, images, videos), fonts, gulp.parallel(fontstyle, infofile));
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
 exports.html = html;
 exports.css = css;
 exports.js = js;
+exports.videos = videos;
 exports.favicon = favicon;
+exports.infofile = infofile;
 exports.fonts_otf = fonts_otf;
 exports.fontstyle = fontstyle;
 exports.fonts = fonts;
