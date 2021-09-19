@@ -493,7 +493,8 @@ if (quantityButtons.length > 0) {
 }
 
 //RANGE
-const priceSlider = document.querySelector('.price-filter__slider');
+// Сюда пишем класс нашего ползунка 
+const priceSlider = document.querySelector('.price__range');
 if (priceSlider) {
 
 	let textFrom = priceSlider.getAttribute('data-from');
@@ -509,12 +510,12 @@ if (priceSlider) {
 		}
 	});
 
-	/*
+
 	const priceStart = document.getElementById('price-start');
 	const priceEnd = document.getElementById('price-end');
 	priceStart.addEventListener('change', setPriceValues);
 	priceEnd.addEventListener('change', setPriceValues);
-	*/
+
 
 	function setPriceValues() {
 		let priceStartValue;

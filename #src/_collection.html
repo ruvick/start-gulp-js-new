@@ -121,18 +121,14 @@
 
 
 <!-- Ползунки -->
-<form class="block__form form-block" action="#">
-	<div class="form-block__item">
-		<div class="category-params-item-price">
-			<div class="category-params-item-price-table table">
-				<div class="cell">
-					<input type="text" name="form[]" id="rangefrom">
-				</div>
-				<div class="cell">
-					<input type="text" name="form[]" id="rangeto">
-				</div>
+<form action="#" class="form">
+	<div class="form__line">
+		<div class="price">
+			<div class="price__range"></div>
+			<div class="price__inputs">
+				<input id="price-start" autocomplete="off" type="text" name="form[]" class="input">
+				<input id="price-end" autocomplete="off" type="text" name="form[]" class="input">
 			</div>
-			<div id="range" class="category-params-item-price-range"></div>
 		</div>
 	</div>
 </form>
