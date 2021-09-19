@@ -5,3 +5,4 @@
 @@include('libs/wNumb.min.js', {})
 
 @@include('libs/lightgallery.min.js', {})
+@@include('libs/tippy.js', {})
