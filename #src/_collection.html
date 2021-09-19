@@ -38,6 +38,14 @@
 </div>
 
 
+<!-- Ползунок выбор цены -->
+<div class="age_show">
+	Товары с ценой не выше <span id="price" class="price">100</span>$
+</div>
+<input type="range" id="age" value="100" min="100" max="1000" oninput="changePrice(this.value)"
+	onchange="changePrice(this.value)">
+
+
 <!-- Строка поиска -->
 <div class="header__search search">
 	<input type="text" placeholder="Поиск по сайту" class="search__input input">
