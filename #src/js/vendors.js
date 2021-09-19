@@ -6,3 +6,4 @@
 
 @@include('libs/lightgallery.min.js', {})
 @@include('libs/tippy.js', {})
+@@include('libs/datepicker-full.min.js', {})
