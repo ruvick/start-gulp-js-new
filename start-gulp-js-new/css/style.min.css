@@ -794,6 +794,10 @@ body.ie ._ibg img {
   display: none !important;
 }
 
+._tabs-item {
+  cursor: pointer;
+}
+
 ._tabs-block {
   display: none;
 }
@@ -807,6 +811,10 @@ body.ie ._ibg img {
 
 .nicescroll-rails {
   z-index: 1000 !important;
+}
+
+.spollers-block__title {
+  cursor: pointer;
 }
 
 ._custom-scroll {

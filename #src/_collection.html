@@ -120,7 +120,6 @@
 </div>
 
 
-
 <!-- Ползунки -->
 <form class="block__form form-block" action="#">
 	<div class="form-block__item">
@@ -140,104 +139,112 @@
 
 
 <!-- Табы Табуляция Вкладки -->
-<div class="block__tabs tabs">
-	<nav class="block__nav">
-		<div class="block__navitem tab__navitem active">Первая</div>
-		<div class="block__navitem tab__navitem">Вторая</div>
+<div class="tabs-block _tabs">
+	<nav class="tabs-block__nav">
+		<div class="tabs-block__navitem tab__navitem _tabs-item _active">Первая</div>
+		<div class="tabs-block__navitem tab__navitem _tabs-item">Вторая</div>
 	</nav>
-	<div class="block__items">
-		<div class="block__item tab__item active">Описание 1</div>
-		<div class="block__item tab__item">Описание 2</div>
+	<div class="tabs-block__items">
+		<div class="tabs-block__item tab__item _tabs-block _active">Описание 1</div>
+		<div class="tabs-block__item tab__item _tabs-block">Описание 2</div>
 	</div>
 </div>
 
 
-<!-- Спойлер -->
-<div class="block__spollers spollers">
-	<div class="spollers__item">
-		<div class="spollers__title spoller closeall">Открой меня</div>
-		<div class="spollers__text">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+<!-- Спойлеры -->
+<div class="spollers-block" data-spollers data-one-spoller>
+	<div class="spollers-block__item">
+		<div class="spollers-block__title" data-spoller>Открой меня 1</div>
+		<div class="spollers-block__body">
+			1 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 		</div>
 	</div>
 
-	<div class="spollers__item">
-		<div class="spollers__title spoller closeall">Открой меня</div>
-		<div class="spollers__text">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+	<div class="spollers-block__item">
+		<div class="spollers-block__title" data-spoller>Открой меня 2</div>
+		<div class="spollers-block__body">
+			2 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 		</div>
 	</div>
 
+	<div class="spollers-block__item">
+		<div class="spollers-block__title" data-spoller>Открой меня 3</div>
+		<div class="spollers-block__body">
+			3 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+		</div>
+	</div>
+</div>
 
-	<!-- Сниппеты - Чекбоксы -->
-	<form class="block__form form-block" action="#">
-		<div class="form-block__item">
-			<div class="check">
-				<input type="checkbox" value="1" name="form[]">
+
+<!-- Сниппеты - Чекбоксы -->
+<form class="block__form form-block" action="#">
+	<div class="form-block__item">
+		<div class="check">
+			<input type="checkbox" value="1" name="form[]">
+		</div>
+	</div>
+</form>
+
+
+<!-- Inputs -->
+<form class="block__form form-block" action="#">
+	<div class="form-block__item">
+		<input autocomplete="off" type="text" name="form[]" data-value="Имя" class="input req">
+		<button class="btn">Отправить</button>
+	</div>
+</form>
+
+
+<!-- Радиокнопки -->
+<form class="block__form form-block" action="#">
+	<div class="form-block__item">
+		<div class="options">
+			<div class="option active">
+				Текст
+				<input type="radio" value="1" name="form[type]">
+			</div>
+			<div class="option">
+				Текст 2
+				<input type="radio" value="2" name="form[type]">
 			</div>
 		</div>
-	</form>
+	</div>
+</form>
 
 
-	<!-- Inputs -->
-	<form class="block__form form-block" action="#">
-		<div class="form-block__item">
-			<input autocomplete="off" type="text" name="form[]" data-value="Имя" class="input req">
-			<button class="btn">Отправить</button>
-		</div>
-	</form>
-
-
-	<!-- Радиокнопки -->
-	<form class="block__form form-block" action="#">
-		<div class="form-block__item">
-			<div class="options">
-				<div class="option active">
-					Текст
-					<input type="radio" value="1" name="form[type]">
-				</div>
-				<div class="option">
-					Текст 2
-					<input type="radio" value="2" name="form[type]">
+<!-- Рейтинг -->
+<form class="block__form form-block" action="#">
+	<div class="form-block__item">
+		<div class="rating-block">
+			<div class="rating edit">
+				<div class="rating__line"></div>
+				<div class="rating__activeline"></div>
+				<input value="4.3" type="hidden" name="rating" />
+				<div class="stars">
+					<span class="star"><i>Ужасно</i></span>
+					<span class="star"><i>Плохо</i></span>
+					<span class="star"><i>Нормально</i></span>
+					<span class="star"><i>Хорошо</i></span>
+					<span class="star"><i>Отлично</i></span>
 				</div>
 			</div>
+			<div class="rating__value">4.3</div>
 		</div>
-	</form>
+	</div>
+</form>
 
 
-	<!-- Рейтинг -->
-	<form class="block__form form-block" action="#">
-		<div class="form-block__item">
-			<div class="rating-block">
-				<div class="rating edit">
-					<div class="rating__line"></div>
-					<div class="rating__activeline"></div>
-					<input value="4.3" type="hidden" name="rating" />
-					<div class="stars">
-						<span class="star"><i>Ужасно</i></span>
-						<span class="star"><i>Плохо</i></span>
-						<span class="star"><i>Нормально</i></span>
-						<span class="star"><i>Хорошо</i></span>
-						<span class="star"><i>Отлично</i></span>
-					</div>
-				</div>
-				<div class="rating__value">4.3</div>
-			</div>
-		</div>
-	</form>
+<!-- Календарь с выбором даты и времени -->
+<form class="block__form form-block" action="#">
+	<div class="sign-up__block-clock">
+		<p>Желаемое врем прохождения</p>
+		<input id="sign-clock" class="sign-up__input-clock datepicker-here" type="text" placeholder="Выбрать дату" value=""
+			data-timepicker="true">
+	</div>
+</form>
 
 
-	<!-- Календарь с выбором даты и времени -->
-	<form class="block__form form-block" action="#">
-		<div class="sign-up__block-clock">
-			<p>Желаемое врем прохождения</p>
-			<input id="sign-clock" class="sign-up__input-clock datepicker-here" type="text" placeholder="Выбрать дату"
-				value="" data-timepicker="true">
-		</div>
-	</form>
-
-
-	<!-- <form class="block__form form-block" action="#">
+<!-- <form class="block__form form-block" action="#">
 		<div class="form-block__item">
 			<select name="form[]" class="form-block">
 				<option value="1" selected="selected">Пункт 1</option>
@@ -252,54 +259,54 @@
 	</form> -->
 
 
-	<!-- Блок с косыми блоками внутри и картинкой -->
-	<div class="services__row d-flex">
+<!-- Блок с косыми блоками внутри и картинкой -->
+<div class="services__row d-flex">
 
-		<div class="services__item-block d-flex">
-			<div class="services__item-block-left">
-				<img src="img/services-1.jpg" alt="">
-			</div>
-			<div class="services__item-block-right services-color">
-				<div class="services__item-block-right-text">
-					<h3>
-						Персональные <br>
-						консультации
-					</h3>
-					<p>
-						Помогу вам в решении
-						личных проблем,
-						преодолении жизненных
-						трудностей и кризисов
-					</p>
-					<a href="#" class="services__item-btn btn">Подробнее</a>
-				</div>
+	<div class="services__item-block d-flex">
+		<div class="services__item-block-left">
+			<img src="img/services-1.jpg" alt="">
+		</div>
+		<div class="services__item-block-right services-color">
+			<div class="services__item-block-right-text">
+				<h3>
+					Персональные <br>
+					консультации
+				</h3>
+				<p>
+					Помогу вам в решении
+					личных проблем,
+					преодолении жизненных
+					трудностей и кризисов
+				</p>
+				<a href="#" class="services__item-btn btn">Подробнее</a>
 			</div>
 		</div>
-
-		<div class="services__item-block d-flex">
-			<div class="services__item-block-left ibg">
-				<img src="img/services-2.jpg" alt="">
-			</div>
-			<div class="services__item-block-right services-color">
-				<div class="services__item-block-right-text">
-					<h3>
-						Консультации <br>
-						On-Line
-					</h3>
-					<p>
-						Помогу вам в решении
-						личных проблем,
-						преодолении жизненных
-						трудностей и кризисов
-					</p>
-					<a href="#" class="services__item-btn btn">Подробнее</a>
-				</div>
-			</div>
-		</div>
-
 	</div>
 
+	<div class="services__item-block d-flex">
+		<div class="services__item-block-left ibg">
+			<img src="img/services-2.jpg" alt="">
+		</div>
+		<div class="services__item-block-right services-color">
+			<div class="services__item-block-right-text">
+				<h3>
+					Консультации <br>
+					On-Line
+				</h3>
+				<p>
+					Помогу вам в решении
+					личных проблем,
+					преодолении жизненных
+					трудностей и кризисов
+				</p>
+				<a href="#" class="services__item-btn btn">Подробнее</a>
+			</div>
+		</div>
+	</div>
 
-	<!-- Переключатель -->
-	<input type="checkbox" id="toggle" class="offscreen" />
-	<label for="toggle" class="switch"></label>
+</div>
+
+
+<!-- Переключатель -->
+<input type="checkbox" id="toggle" class="offscreen" />
+<label for="toggle" class="switch"></label>
