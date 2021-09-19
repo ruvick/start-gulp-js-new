@@ -1,3 +1,198 @@
+<!-- Формы =================================================================================================================== -->
+<!-- Отправка формы Ajax  -->
+<form data-ajax="true" action="sendmail.php" method="POST" class="form">
+	<div class="form__line">
+		<label for="name" class="form__label">Поле Имя</label>
+		<input id="name" autocomplete="off" type="text" name="form[]" data-error="Ошибка" data-value="Имя"
+			class="input _req">
+	</div>
+	<button type="submit" class="form__btn btn">Задать вопрос</button>
+</form>
+
+
+<!-- Форма с инпутами. Валидация, фокус, маска  -->
+<form action="#" class="form">
+	<div class="form__line">
+		<label for="name" class="form__label">Поле Имя</label>
+		<input id="name" autocomplete="off" type="text" name="form[]" data-error="Ошибка" data-value="Имя"
+			class="input _req">
+
+		<label for="tel" class="form__label">Поле Телефон, Ввод только цифр</label>
+		<input id="tel" autocomplete="off" type="text" name="form[]" data-error="Ошибка" data-value="Только цифры телефона"
+			class="input _digital _req">
+
+		<label for="tel2" class="form__label">Поле Телефон, Маска телефона</label>
+		<input id="tel2" autocomplete="off" type="text" name="form[]" data-error="Ошибка" data-value="Маска телефона"
+			class="input _phone _req">
+
+		<label for="email" class="form__label">Поле Email, Только Email иначе ошибка</label>
+		<input id="email" autocomplete="off" type="text" name="form[]" data-error="Ошибка"
+			data-value="Только Email иначе ошибка" class="input _email _req">
+	</div>
+	<button type="submit" class="form__btn btn">Задать вопрос</button>
+</form>
+
+
+<!-- Селекты -->
+<form action="#" class="form">
+	<div class="form__line">
+		<select name="form[]" class="form">
+			<option value="1" selected="selected">Пункт №1</option>
+			<option value="2">Пункт №2</option>
+			<option value="3">Пункт №3</option>
+			<option value="4">Пункт №4</option>
+			<option value="2">Пункт №5</option>
+			<option value="3">Пункт №6</option>
+		</select>
+	</div>
+</form>
+
+
+<!-- Строка поиска -->
+<div class="header__search search">
+	<input type="text" placeholder="Поиск по сайту" class="search__input input">
+	<button type="submit" tabindex="2" id="searchsubmit" class="sub-search" value=""></button>
+</div>
+<button class="mob-search"></button>
+
+
+<!-- Блок выбора колличества -->
+<div class="number d-flex">
+	<button class="plus">+</button>
+	<input id="pageNumeric" class="quantity" type="text" max="99999" value="1">
+	<button class="minus">-</button>
+</div>
+
+
+<!-- Ползунок выбор цены -->
+<div class="age_show">
+	Товары с ценой не выше <span id="price" class="price">100</span>$
+</div>
+<input type="range" id="age" value="100" min="100" max="1000" oninput="changePrice(this.value)"
+	onchange="changePrice(this.value)">
+
+
+<!-- Сниппеты - Чекбоксы -->
+<form class="block__form form-block" action="#">
+	<div class="form-block__item">
+		<div class="check">
+			<input type="checkbox" value="1" name="form[]">
+		</div>
+	</div>
+</form>
+
+
+<!-- Радиокнопки -->
+<form class="block__form form-block" action="#">
+	<div class="form-block__item">
+		<div class="options">
+			<div class="option active">
+				Текст
+				<input type="radio" value="1" name="form[type]">
+			</div>
+			<div class="option">
+				Текст 2
+				<input type="radio" value="2" name="form[type]">
+			</div>
+		</div>
+	</div>
+</form>
+
+
+<!-- Ползунки -->
+<form class="block__form form-block" action="#">
+	<div class="form-block__item">
+		<div class="category-params-item-price">
+			<div class="category-params-item-price-table table">
+				<div class="cell">
+					<input type="text" name="form[]" id="rangefrom">
+				</div>
+				<div class="cell">
+					<input type="text" name="form[]" id="rangeto">
+				</div>
+			</div>
+			<div id="range" class="category-params-item-price-range"></div>
+		</div>
+	</div>
+</form>
+
+
+<!-- Табы Табуляция Вкладки -->
+<div class="tabs-block _tabs">
+	<nav class="tabs-block__nav">
+		<div class="tabs-block__navitem tab__navitem _tabs-item _active">Первая</div>
+		<div class="tabs-block__navitem tab__navitem _tabs-item">Вторая</div>
+	</nav>
+	<div class="tabs-block__items">
+		<div class="tabs-block__item tab__item _tabs-block _active">Описание 1</div>
+		<div class="tabs-block__item tab__item _tabs-block">Описание 2</div>
+	</div>
+</div>
+
+
+<!-- Спойлеры -->
+<div class="spollers-block" data-spollers data-one-spoller>
+	<div class="spollers-block__item">
+		<div class="spollers-block__title" data-spoller>Открой меня 1</div>
+		<div class="spollers-block__body">
+			1 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+		</div>
+	</div>
+
+	<div class="spollers-block__item">
+		<div class="spollers-block__title" data-spoller>Открой меня 2</div>
+		<div class="spollers-block__body">
+			2 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+		</div>
+	</div>
+
+	<div class="spollers-block__item">
+		<div class="spollers-block__title" data-spoller>Открой меня 3</div>
+		<div class="spollers-block__body">
+			3 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+		</div>
+	</div>
+</div>
+
+
+<!-- Рейтинг -->
+<form class="block__form form-block" action="#">
+	<div class="form-block__item">
+		<div class="rating-block">
+			<div class="rating edit">
+				<div class="rating__line"></div>
+				<div class="rating__activeline"></div>
+				<input value="4.3" type="hidden" name="rating" />
+				<div class="stars">
+					<span class="star"><i>Ужасно</i></span>
+					<span class="star"><i>Плохо</i></span>
+					<span class="star"><i>Нормально</i></span>
+					<span class="star"><i>Хорошо</i></span>
+					<span class="star"><i>Отлично</i></span>
+				</div>
+			</div>
+			<div class="rating__value">4.3</div>
+		</div>
+	</div>
+</form>
+
+
+<!-- Календарь с выбором даты и времени -->
+<form class="block__form form-block" action="#">
+	<div class="sign-up__block-clock">
+		<p>Желаемое врем прохождения</p>
+		<input id="sign-clock" class="sign-up__input-clock datepicker-here" type="text" placeholder="Выбрать дату" value=""
+			data-timepicker="true">
+	</div>
+</form>
+
+
+<!-- Переключатель -->
+<input type="checkbox" id="toggle" class="offscreen" />
+<label for="toggle" class="switch"></label>
+
+
+<!-- Карточки ===================================================================================================================================== -->
 <!-- Карточка с выбором колличества -->
 <div class="selc-price">
 
@@ -28,30 +223,6 @@
 	<a href="#" class="selc-price__char-link">Все характеристики</a>
 
 </div>
-
-
-<!-- Блок выбора колличества -->
-<div class="number d-flex">
-	<button class="plus">+</button>
-	<input id="pageNumeric" class="quantity" type="text" max="99999" value="1">
-	<button class="minus">-</button>
-</div>
-
-
-<!-- Ползунок выбор цены -->
-<div class="age_show">
-	Товары с ценой не выше <span id="price" class="price">100</span>$
-</div>
-<input type="range" id="age" value="100" min="100" max="1000" oninput="changePrice(this.value)"
-	onchange="changePrice(this.value)">
-
-
-<!-- Строка поиска -->
-<div class="header__search search">
-	<input type="text" placeholder="Поиск по сайту" class="search__input input">
-	<button type="submit" tabindex="2" id="searchsubmit" class="sub-search" value=""></button>
-</div>
-<button class="mob-search"></button>
 
 
 <!-- Информационные блоки с логотипами Стили в карточках-->
@@ -119,158 +290,6 @@
 
 </div>
 
-<!-- Форма с инпутами. Валидация, фокус, маска  -->
-<form action="#" class="form">
-	<div class="form__line">
-		<label for="name" class="form__label">Поле Имя</label>
-		<input id="name" autocomplete="off" type="text" name="form[]" data-error="Ошибка" data-value="Имя"
-			class="input _req">
-
-		<label for="tel" class="form__label">Поле Телефон, Ввод только цифр</label>
-		<input id="tel" autocomplete="off" type="text" name="form[]" data-error="Ошибка" data-value="Только цифры телефона"
-			class="input _digital _req">
-
-		<label for="tel2" class="form__label">Поле Телефон, Маска телефона</label>
-		<input id="tel2" autocomplete="off" type="text" name="form[]" data-error="Ошибка" data-value="Маска телефона"
-			class="input _phone _req">
-
-		<label for="email" class="form__label">Поле Email, Только Email иначе ошибка</label>
-		<input id="email" autocomplete="off" type="text" name="form[]" data-error="Ошибка"
-			data-value="Только Email иначе ошибка" class="input _email _req">
-	</div>
-	<button type="submit" class="form__btn btn">Задать вопрос</button>
-</form>
-
-
-<!-- Ползунки -->
-<form class="block__form form-block" action="#">
-	<div class="form-block__item">
-		<div class="category-params-item-price">
-			<div class="category-params-item-price-table table">
-				<div class="cell">
-					<input type="text" name="form[]" id="rangefrom">
-				</div>
-				<div class="cell">
-					<input type="text" name="form[]" id="rangeto">
-				</div>
-			</div>
-			<div id="range" class="category-params-item-price-range"></div>
-		</div>
-	</div>
-</form>
-
-
-<!-- Табы Табуляция Вкладки -->
-<div class="tabs-block _tabs">
-	<nav class="tabs-block__nav">
-		<div class="tabs-block__navitem tab__navitem _tabs-item _active">Первая</div>
-		<div class="tabs-block__navitem tab__navitem _tabs-item">Вторая</div>
-	</nav>
-	<div class="tabs-block__items">
-		<div class="tabs-block__item tab__item _tabs-block _active">Описание 1</div>
-		<div class="tabs-block__item tab__item _tabs-block">Описание 2</div>
-	</div>
-</div>
-
-
-<!-- Спойлеры -->
-<div class="spollers-block" data-spollers data-one-spoller>
-	<div class="spollers-block__item">
-		<div class="spollers-block__title" data-spoller>Открой меня 1</div>
-		<div class="spollers-block__body">
-			1 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-		</div>
-	</div>
-
-	<div class="spollers-block__item">
-		<div class="spollers-block__title" data-spoller>Открой меня 2</div>
-		<div class="spollers-block__body">
-			2 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-		</div>
-	</div>
-
-	<div class="spollers-block__item">
-		<div class="spollers-block__title" data-spoller>Открой меня 3</div>
-		<div class="spollers-block__body">
-			3 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-		</div>
-	</div>
-</div>
-
-
-<!-- Сниппеты - Чекбоксы -->
-<form class="block__form form-block" action="#">
-	<div class="form-block__item">
-		<div class="check">
-			<input type="checkbox" value="1" name="form[]">
-		</div>
-	</div>
-</form>
-
-
-<!-- Радиокнопки -->
-<form class="block__form form-block" action="#">
-	<div class="form-block__item">
-		<div class="options">
-			<div class="option active">
-				Текст
-				<input type="radio" value="1" name="form[type]">
-			</div>
-			<div class="option">
-				Текст 2
-				<input type="radio" value="2" name="form[type]">
-			</div>
-		</div>
-	</div>
-</form>
-
-
-<!-- Рейтинг -->
-<form class="block__form form-block" action="#">
-	<div class="form-block__item">
-		<div class="rating-block">
-			<div class="rating edit">
-				<div class="rating__line"></div>
-				<div class="rating__activeline"></div>
-				<input value="4.3" type="hidden" name="rating" />
-				<div class="stars">
-					<span class="star"><i>Ужасно</i></span>
-					<span class="star"><i>Плохо</i></span>
-					<span class="star"><i>Нормально</i></span>
-					<span class="star"><i>Хорошо</i></span>
-					<span class="star"><i>Отлично</i></span>
-				</div>
-			</div>
-			<div class="rating__value">4.3</div>
-		</div>
-	</div>
-</form>
-
-
-<!-- Календарь с выбором даты и времени -->
-<form class="block__form form-block" action="#">
-	<div class="sign-up__block-clock">
-		<p>Желаемое врем прохождения</p>
-		<input id="sign-clock" class="sign-up__input-clock datepicker-here" type="text" placeholder="Выбрать дату" value=""
-			data-timepicker="true">
-	</div>
-</form>
-
-
-<!-- Селекты -->
-<form action="#" class="form">
-	<div class="form__line">
-		<select name="form[]" class="form">
-			<option value="1" selected="selected">Пункт №1</option>
-			<option value="2">Пункт №2</option>
-			<option value="3">Пункт №3</option>
-			<option value="4">Пункт №4</option>
-			<option value="2">Пункт №5</option>
-			<option value="3">Пункт №6</option>
-		</select>
-	</div>
-</form>
-
 
 <!-- Блок с косыми блоками внутри и картинкой -->
 <div class="services__row d-flex">
@@ -318,8 +337,3 @@
 	</div>
 
 </div>
-
-
-<!-- Переключатель -->
-<input type="checkbox" id="toggle" class="offscreen" />
-<label for="toggle" class="switch"></label>

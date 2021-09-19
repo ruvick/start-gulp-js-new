@@ -12,17 +12,13 @@
 			<section id="about" class="about">
 				<div class="_container">
 
-					<form action="#" class="form">
+					<form data-ajax="true" action="sendmail.php" method="POST" class="form">
 						<div class="form__line">
-							<select name="form[]" class="form">
-								<option value="1" selected="selected">Пункт №1</option>
-								<option value="2">Пункт №2</option>
-								<option value="3">Пункт №3</option>
-								<option value="4">Пункт №4</option>
-								<option value="2">Пункт №5</option>
-								<option value="3">Пункт №6</option>
-							</select>
+							<label for="name" class="form__label">Поле Имя</label>
+							<input id="name" autocomplete="off" type="text" name="form[]" data-error="Ошибка" data-value="Имя"
+								class="input _req">
 						</div>
+						<button type="submit" class="form__btn btn">Задать вопрос</button>
 					</form>
 
 				</div>
