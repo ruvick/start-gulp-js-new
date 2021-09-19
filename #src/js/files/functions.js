@@ -1,3 +1,7 @@
+// 'use strict';
+// document.addEventListener('DOMContentLoaded', () => {
+// });
+
 var ua = window.navigator.userAgent;
 var msie = ua.indexOf("MSIE ");
 var isMobile = { Android: function () { return navigator.userAgent.match(/Android/i); }, BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); }, iOS: function () { return navigator.userAgent.match(/iPhone|iPad|iPod/i); }, Opera: function () { return navigator.userAgent.match(/Opera Mini/i); }, Windows: function () { return navigator.userAgent.match(/IEMobile/i); }, any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); } };
@@ -12,6 +16,9 @@ if (isIE()) {
 if (isMobile.any()) {
 	document.querySelector('html').classList.add('_touch');
 }
+
+// Получить цифры из строки
+//parseInt(itemContactpagePhone.replace(/[^\d]/g, ''))
 
 function testWebP(callback) {
 	var webP = new Image();
@@ -49,8 +56,8 @@ window.addEventListener("load", function () {
 });
 
 let unlock = true;
-
 //=================
+
 //ActionsOnHash
 if (location.hash) {
 	const hsh = location.hash.replace('#', '');
@@ -61,26 +68,185 @@ if (location.hash) {
 	}
 }
 //=================
-//Menu
-let iconMenu = document.querySelector(".icon-menu");
-if (iconMenu != null) {
-	let delay = 500;
-	let menuBody = document.querySelector(".menu__body");
-	iconMenu.addEventListener("click", function (e) {
-		if (unlock) {
-			body_lock(delay);
-			iconMenu.classList.toggle("_active");
-			menuBody.classList.toggle("_active");
-		}
-	});
-};
-function menu_close() {
-	let iconMenu = document.querySelector(".icon-menu");
-	let menuBody = document.querySelector(".menu__body");
-	iconMenu.classList.remove("_active");
-	menuBody.classList.remove("_active");
-}
+
+//Menu старое
+// let iconMenu = document.querySelector(".icon-menu");
+// if (iconMenu != null) {
+// 	let delay = 500;
+// 	let menuBody = document.querySelector(".menu__body");
+// 	iconMenu.addEventListener("click", function (e) {
+// 		if (unlock) {
+// 			body_lock(delay);
+// 			iconMenu.classList.toggle("_active");
+// 			menuBody.classList.toggle("_active");
+// 		}
+// 	});
+// };
+// function menu_close() {
+// 	let iconMenu = document.querySelector(".icon-menu");
+// 	let menuBody = document.querySelector(".menu__body");
+// 	iconMenu.classList.remove("_active");
+// 	menuBody.classList.remove("_active");
+// } 
 //=================
+
+const iconMenu = document.querySelector(".icon-menu");
+const body = document.querySelector("body");
+const menuBody = document.querySelector(".mob-menu");
+const menuListItemElems = document.querySelector(".mob-menu__list");
+const mobsearch = document.querySelector(".mob-search");
+const headsearch = document.querySelector(".header__search");
+
+//BURGER
+if (iconMenu) {
+	iconMenu.addEventListener("click", function () {
+		iconMenu.classList.toggle("active");
+		body.classList.toggle("_lock");
+		menuBody.classList.toggle("active");
+	});
+}
+
+// Закрытие моб меню при клике на якорную ссылку
+if (menuListItemElems) {
+	menuListItemElems.addEventListener("click", function () {
+		iconMenu.classList.toggle("active");
+		body.classList.toggle("_lock");
+		menuBody.classList.toggle("active");
+	});
+}
+
+// Строка поиска на мобилках 
+if (mobsearch) {
+	mobsearch.addEventListener("click", function () {
+		headsearch.classList.toggle("active");
+	});
+}
+
+// Закрытие моб меню при клике вне области меню 
+window.addEventListener('click', e => { // при клике в любом месте окна браузера
+	const target = e.target // находим элемент, на котором был клик
+	if (!target.closest('.icon-menu') && !target.closest('.mob-menu') && !target.closest('.mob-search') && !target.closest('.header__search') && !target.closest('._popup-link') && !target.closest('.popup')) { // если этот элемент или его родительские элементы не окно навигации и не кнопка
+		iconMenu.classList.remove('active') // то закрываем окно навигации, удаляя активный класс
+		menuBody.classList.remove('active')
+		body.classList.remove('_lock')
+		headsearch.classList.remove('active')
+	}
+})
+
+// Плавная прокрутка
+const smotScrollElems = document.querySelectorAll('a[href^="#"]:not(a[href="#"])');
+
+smotScrollElems.forEach(link => {
+	link.addEventListener('click', (event) => {
+		event.preventDefault()
+		console.log(event);
+
+		const id = link.getAttribute('href').substring(1)
+		console.log('id : ', id);
+
+		document.getElementById(id).scrollIntoView({
+			behavior: 'smooth'
+		});
+	})
+});
+
+
+// Полоса прокрутки в шапке
+const scrollProgress = document.getElementById('scroll-progress');
+const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+window.addEventListener('scroll', () => {
+	const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+	scrollProgress.style.width = `${(scrollTop / height) * 100}%`;
+});
+
+
+// Ползунок выбора цены
+const priceEl = document.querySelector(".price");
+
+function changePrice(price) {
+	priceEl.innerText = price;
+	console.log(price);
+};
+
+
+// Поочередное открытие нескольких блоков меню, табы, либо что то еще
+const BarIconElems = document.querySelectorAll('.sidebar__menu-open');
+const BarLinkIconElems = document.querySelectorAll('.sidebar__menu-icon');
+const BarSubMenuElems = document.querySelectorAll('.sidebar__submenu');
+
+BarIconElems.forEach((btn, index) => {
+	btn.addEventListener('click', () => {
+
+		if (!btn.classList.contains('sidebar__menu-icon_active')) {
+
+			BarSubMenuElems.forEach((BarSubMenuElem) => {
+				BarSubMenuElem.classList.remove('active')
+			});
+			BarIconElems.forEach((BarIconElem) => {
+				BarIconElem.classList.remove('sidebar__menu-icon_active')
+			});
+			BarLinkIconElems.forEach((BarLinkIconElem) => {
+				BarLinkIconElem.classList.remove('sidebar__menu-icon_active')
+			});
+
+			BarSubMenuElems[index].classList.add('active')
+			BarLinkIconElems[index].classList.add('sidebar__menu-icon_active')
+			btn.classList.add('sidebar__menu-icon_active')
+		} else {
+			BarSubMenuElems[index].classList.remove('active')
+			BarLinkIconElems[index].classList.remove('sidebar__menu-icon_active')
+			btn.classList.remove('sidebar__menu-icon_active')
+		}
+	})
+})
+
+// Маска телефона на JS
+// function setCursorPosition(pos, elem) {
+// 	elem.focus();
+// 	if (elem.setSelectionRange) elem.setSelectionRange(pos, pos);
+// 	else if (elem.createTextRange) {
+// 		var range = elem.createTextRange();
+// 		range.collapse(true);
+// 		range.moveEnd("character", pos);
+// 		range.moveStart("character", pos);
+// 		range.select()
+// 	}
+// }
+// function mask(event) {
+// 	var matrix = "+7 (___) ___ ____",
+// 		i = 0,
+// 		def = matrix.replace(/\D/g, ""),
+// 		val = this.value.replace(/\D/g, "");
+// 	if (def.length >= val.length) val = def;
+// 	this.value = matrix.replace(/./g, function (a) {
+// 		return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a
+// 	});
+// 	if (event.type == "blur") {
+// 		if (this.value.length == 2) this.value = ""
+// 	} else setCursorPosition(this.value.length, this)
+// };
+// var input = document.querySelector("#tel");
+// input.addEventListener("input", mask, false);
+// input.addEventListener("focus", mask, false);
+// input.addEventListener("blur", mask, false);
+
+// var inputTel = document.querySelector("#tel2");
+// inputTel.addEventListener("input", mask, false);
+// inputTel.addEventListener("focus", mask, false);
+// inputTel.addEventListener("blur", mask, false);
+
+// var inputTelpopup = document.querySelector("#tel3");
+// inputTelpopup.addEventListener("input", mask, false);
+// inputTelpopup.addEventListener("focus", mask, false);
+// inputTelpopup.addEventListener("blur", mask, false);
+
+// var inputTelpopup = document.querySelector("#tel4");
+// inputTelpopup.addEventListener("input", mask, false);
+// inputTelpopup.addEventListener("focus", mask, false);
+// inputTelpopup.addEventListener("blur", mask, false);
+// ===============================================================
+
 //BodyLock
 function body_lock(delay) {
 	let body = document.querySelector("body");
@@ -127,6 +293,7 @@ function body_lock_add(delay) {
 	}
 }
 //=================
+
 // LettersAnimation
 let title = document.querySelectorAll('._letter-animation');
 if (title) {
@@ -152,6 +319,7 @@ if (title) {
 	}
 }
 //=================
+
 //Tabs
 let tabs = document.querySelectorAll("._tabs");
 for (let index = 0; index < tabs.length; index++) {
@@ -173,6 +341,7 @@ for (let index = 0; index < tabs.length; index++) {
 	}
 }
 //=================
+
 /*
 Для родителя слойлеров пишем атрибут data-spollers
 Для заголовков слойлеров пишем атрибут data-spoller
@@ -300,6 +469,7 @@ if (spollersArray.length > 0) {
 	}
 }
 //=================
+
 //Gallery
 let gallery = document.querySelectorAll('._gallery');
 if (gallery) {
@@ -316,6 +486,7 @@ function gallery_init() {
 	}
 }
 //=================
+
 //SearchInList
 function search_in_list(input) {
 	let ul = input.parentNode.querySelector('ul')
@@ -334,12 +505,14 @@ function search_in_list(input) {
 	}
 }
 //=================
+
 //DigiFormat
 function digi(str) {
 	var r = str.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, "$1 ");
 	return r;
 }
 //=================
+
 //DiGiAnimate
 function digi_animate(digi_animate) {
 	if (digi_animate.length > 0) {
@@ -384,6 +557,7 @@ function digi_animate_value(el, start, end, duration) {
 	el.classList.add('_done');
 }
 //=================
+
 //Popups
 let popup_link = document.querySelectorAll('._popup-link');
 let popups = document.querySelectorAll('.popup');
@@ -464,6 +638,7 @@ document.addEventListener('keydown', function (e) {
 });
 
 //=================
+
 //SlideToggle
 let _slideUp = (target, duration = 500) => {
 	if (!target.classList.contains('_slide')) {
@@ -530,12 +705,14 @@ let _slideToggle = (target, duration = 500) => {
 	}
 }
 //========================================
+
 //Wrap
 function _wrap(el, wrapper) {
 	el.parentNode.insertBefore(wrapper, el);
 	wrapper.appendChild(el);
 }
 //========================================
+
 //RemoveClasses
 function _removeClasses(el, class_name) {
 	for (var i = 0; i < el.length; i++) {
@@ -543,6 +720,7 @@ function _removeClasses(el, class_name) {
 	}
 }
 //========================================
+
 //IsHidden
 function _is_hidden(el) {
 	return (el.offsetParent === null)
@@ -611,6 +789,7 @@ if (moreBlocks.length > 0) {
 		}
 	}
 }
+
 //==RATING======================================
 const ratings = document.querySelectorAll('.rating');
 if (ratings.length > 0) {
@@ -715,6 +894,7 @@ function initRatings() {
 	}
 }
 //========================================
+
 //Animate
 function animate({ timing, draw, duration }) {
 	let start = performance.now();

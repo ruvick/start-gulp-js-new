@@ -12,7 +12,7 @@
 }
 :focus,
 :active {
-	// outline: none;
+	// outline: none; 
 }
 a:focus,
 a:active {
@@ -45,6 +45,7 @@ input,
 button,
 textarea {
 	font-family: $fontFamily;
+	font-size: inherit;
 }
 input::-ms-clear {
 	display: none;
@@ -69,6 +70,7 @@ ul li {
 }
 img {
 	vertical-align: top;
+	max-width: 100%;
 }
 h1,
 h2,
@@ -80,4 +82,8 @@ h6 {
 	font-size: inherit;
 }
 //-webkit-overflow-scrolling: touch;
-//animation-play-state: paused !important;
+/*
+&::-webkit-scrollbar {
+	display: none;
+}
+*/

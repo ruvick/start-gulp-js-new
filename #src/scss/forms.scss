@@ -6,7 +6,7 @@
 	}
 	&__line {
 	}
-	&__input {
+	&__input { 
 	}
 	&__button {
 	}
@@ -17,10 +17,28 @@
 //</FORM>====================================================================================================
 
 //<BUTTONS (a.btn+tab)>====================================================================================================
-.btn {
+.btn{
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	padding: 6px 8px;
+	min-width: 144px;
+	min-height: 36px;
+	font-family: 'Lato';
+	font-size: 12px;
+	font-weight: 400;
+	color: #000;
+	background: #FFE417;
+	border-radius: 5px;
+	&:hover{}
+	&.fw{width: 100%;}  
+}
+
+.button {
 	display: inline-flex;
 	padding: 0px 0px;
-	@media (min-width: 992px) {
+	@media (any-hover: hover) {
 		&:hover {
 		}
 	}
@@ -29,6 +47,38 @@
 	}
 }
 //</BUTTONS>====================================================================================================
+
+//<SEARCH>====================================================================================================
+.search {
+	position: relative;
+	width: 100%;
+}
+.search__input {
+ font-size: 12px;
+ font-weight: 300;
+ height: 30px;
+ color: #464749;
+ padding-left: 14px;
+ border: 1px solid #e0e1e3 !important;
+ border-radius: 5px !important;
+}
+.sub-search {
+ background-color: transparent;
+ border: none;
+}
+.sub-search:after {
+ content: "";
+ position: absolute;
+ top: 8px;
+ right: 8px;
+ width: 17px;
+ height: 17px;
+ background-position: 0 0;
+ background-repeat: no-repeat;
+ background-size: 100%;
+ background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNy4xMDQiIGhlaWdodD0iMTcuMSIgdmlld0JveD0iMCAwIDE3LjEwNCAxNy4xIj4NCiAgPHBhdGggaWQ9ItCa0L7QvdGC0YPRgF85IiBkYXRhLW5hbWU9ItCa0L7QvdGC0YPRgCA5IiBkPSJNMTQzMC4wMjMsMTE5LjI1M2E2LjI2NSw2LjI2NSwwLDAsMCwxMC4yMzIsNC44NDlsLjA2NC0uMDUyLDUuODg1LDUuODg1YS41NTMuNTUzLDAsMCwwLC43NjUsMCwuNTQyLjU0MiwwLDAsMCwwLS43NjZsLTUuODMtNS44My0uMDU4LS4wNTguMDUyLS4wNjNhNi4yNjMsNi4yNjMsMCwxLDAtMTEuMTEtMy45NjVabTEuMDgsMGE1LjE4MSw1LjE4MSwwLDEsMSw1LjE4MSw1LjE4MUE1LjE4Nyw1LjE4NywwLDAsMSwxNDMxLjEsMTE5LjI1M1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNDMwLjAyMyAtMTEyLjk4OSkiIGZpbGw9IiNkMzgyMGYiLz4NCjwvc3ZnPg0K);
+}
+//</SEARCH>====================================================================================================
 
 //<SELECT (sel+tab)>====================================================================================================
 .select {
@@ -70,13 +120,13 @@
 			transition: all 0.3s ease 0s;
 			width: 11px;
 			height: 7px;
-			background: url("../img/icons/select.svg") center / 100% no-repeat;
+			background: url("../img/icons/triangl-black.svg") center / 100% no-repeat;
 		}
 	}
 	&__input {
 		width: 100%;
-		background-color: transparent;
 		height: 100%;
+		background-color: transparent;
 	}
 	// .select__options
 	&__options {
@@ -122,6 +172,8 @@
 //</SELECT>====================================================================================================
 
 //<INPUT (inp+tab)>====================================================================================================
+input[type=range]{cursor: pointer;}
+
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -134,19 +186,27 @@ textarea {
 	}
 }
 .input {
-	border-radius: 0 !important;
+	display: flex;
 	width: 100%;
-	display: block;
-	padding: 0px 20px;
+	height: 30px;
+	padding: 0px 15px;
+	border-radius: 5px;
+	border: 1px solid #000;
 	&._focus {
 	}
 	&._error {
 	}
 }
 textarea.input {
-	resize: none;
-	padding: 0px 0px;
+	resize:none;
+	padding: 5px 10px;
 }
+
+// Стилизация placeholder 
+::-webkit-input-placeholder {color: #8584847a;}
+::-moz-placeholder          {color: #8584847a;}/* Firefox 19+ */
+:-moz-placeholder           {color: #8584847a;}/* Firefox 18- */
+:-ms-input-placeholder      {color: #8584847a;}
 //</INPUT>====================================================================================================
 
 //<CHECK (chk+tab)>====================================================================================================
