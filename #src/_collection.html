@@ -119,6 +119,28 @@
 
 </div>
 
+<!-- Форма с инпутами. Валидация, фокус, маска  -->
+<form action="#" class="form">
+	<div class="form__line">
+		<label for="name" class="form__label">Поле Имя</label>
+		<input id="name" autocomplete="off" type="text" name="form[]" data-error="Ошибка" data-value="Имя"
+			class="input _req">
+
+		<label for="tel" class="form__label">Поле Телефон, Ввод только цифр</label>
+		<input id="tel" autocomplete="off" type="text" name="form[]" data-error="Ошибка" data-value="Только цифры телефона"
+			class="input _digital _req">
+
+		<label for="tel2" class="form__label">Поле Телефон, Маска телефона</label>
+		<input id="tel2" autocomplete="off" type="text" name="form[]" data-error="Ошибка" data-value="Маска телефона"
+			class="input _phone _req">
+
+		<label for="email" class="form__label">Поле Email, Только Email иначе ошибка</label>
+		<input id="email" autocomplete="off" type="text" name="form[]" data-error="Ошибка"
+			data-value="Только Email иначе ошибка" class="input _email _req">
+	</div>
+	<button type="submit" class="form__btn btn">Задать вопрос</button>
+</form>
+
 
 <!-- Ползунки -->
 <form class="block__form form-block" action="#">
@@ -186,15 +208,6 @@
 </form>
 
 
-<!-- Inputs -->
-<form class="block__form form-block" action="#">
-	<div class="form-block__item">
-		<input autocomplete="off" type="text" name="form[]" data-value="Имя" class="input req">
-		<button class="btn">Отправить</button>
-	</div>
-</form>
-
-
 <!-- Радиокнопки -->
 <form class="block__form form-block" action="#">
 	<div class="form-block__item">
@@ -244,6 +257,7 @@
 </form>
 
 
+<!-- Селекты -->
 <!-- <form class="block__form form-block" action="#">
 		<div class="form-block__item">
 			<select name="form[]" class="form-block">

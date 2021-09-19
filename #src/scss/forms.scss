@@ -193,14 +193,26 @@ textarea {
 	border-radius: 5px;
 	border: 1px solid #000;
 	&._focus {
+		background: grey;
 	}
 	&._error {
+		border: 1px solid red;
 	}
 }
 textarea.input {
 	resize:none;
 	padding: 5px 10px;
 }
+
+// Описываем focus label, подписи поля или блок
+// .form__line._focus .form__label {
+// 	background: red;
+// }
+
+// // Описываем ошибку label, подписи поля или блок
+// .form__line._error .form__label {
+// 	color: red;
+// }
 
 // Стилизация placeholder 
 ::-webkit-input-placeholder {color: #8584847a;}

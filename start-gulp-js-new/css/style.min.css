@@ -124,6 +124,7 @@ h6 {
 body {
   font-weight: 400;
   color: #000;
+  background: #333;
 }
 body a {
   font-family: "Lato";
@@ -318,6 +319,13 @@ textarea:focus {
   border-radius: 5px;
   border: 1px solid #000;
 }
+.input._focus {
+  background: grey;
+}
+.input._error {
+  border: 1px solid red;
+}
+
 textarea.input {
   resize: none;
   padding: 5px 10px;
