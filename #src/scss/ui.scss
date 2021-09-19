@@ -326,4 +326,47 @@ body.ie {
 		width: 100%;
 	}
 }
+//========================================================================================================================================================
+
+// Slick-Slider ======================================================================================================================================
+.slick-slider .slick-track {
+	justify-content: space-between;}
+
+ .slick-arrow {
+	position: absolute;
+	top: 45%;
+	width: 43px;
+	height: 43px;
+	font-size: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	background: #fff;
+	border: 1px solid #D2D1D1;
+	z-index: 50;}
+
+ .slick-arrow:before {
+	content: '';
+	float: left;
+	width: 7px;
+	height: 15px;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-size: 100%;}
+
+ .slick-next {
+	left: -20px;}
+
+ .slick-prev {
+	right: -20px;}
+
+ .slick-next:before {
+	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4Ljg3NSIgaGVpZ2h0PSIxOS41MjEiIHZpZXdCb3g9IjAgMCA4Ljg3NSAxOS41MjEiPg0KICA8ZyBpZD0i0KHQs9GA0YPQv9C/0LjRgNC+0LLQsNGC0YxfNDAiIGRhdGEtbmFtZT0i0KHQs9GA0YPQv9C/0LjRgNC+0LLQsNGC0YwgNDAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMzguMzQyIC0xMDI5LjgzNCkiPg0KICAgIDxsaW5lIGlkPSLQm9C40L3QuNGPXzEyIiBkYXRhLW5hbWU9ItCb0LjQvdC40Y8gMTIiIHgxPSI2Ljc1NiIgeTE9IjguNjY3IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMzkuNDAyIDEwMzkuNjI4KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAzYzhjIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMS41MSIvPg0KICAgIDxsaW5lIGlkPSLQm9C40L3QuNGPXzEzIiBkYXRhLW5hbWU9ItCb0LjQvdC40Y8gMTMiIHkxPSI4LjY2NyIgeDI9IjYuNzU2IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMzkuNDAyIDEwMzAuODk0KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAzYzhjIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMS41MSIvPg0KICA8L2c+DQo8L3N2Zz4NCg==');
+}
+ .slick-prev:before {
+	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4Ljg3NSIgaGVpZ2h0PSIxOS41MjEiIHZpZXdCb3g9IjAgMCA4Ljg3NSAxOS41MjEiPg0KICA8ZyBpZD0i0KHQs9GA0YPQv9C/0LjRgNC+0LLQsNGC0YxfMzgiIGRhdGEtbmFtZT0i0KHQs9GA0YPQv9C/0LjRgNC+0LLQsNGC0YwgMzgiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNjgwLjI1IC0xMDI5LjgzNCkiPg0KICAgIDxsaW5lIGlkPSLQm9C40L3QuNGPXzEwIiBkYXRhLW5hbWU9ItCb0LjQvdC40Y8gMTAiIHgyPSI2Ljc1NiIgeTI9IjguNjY3IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNjgxLjMwOSAxMDMwLjg5NCkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwM2M4YyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNTEiLz4NCiAgICA8bGluZSBpZD0i0JvQuNC90LjRj18xMSIgZGF0YS1uYW1lPSLQm9C40L3QuNGPIDExIiB4MT0iNi43NTYiIHkyPSI4LjY2NyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTY4MS4zMDkgMTAzOS42MjgpIiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDNjOGMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUxIi8+DQogIDwvZz4NCjwvc3ZnPg0K');
+}
+//====================================================================================================================================================
+
 //</ГОТОВЫЕ КЛАССЫ>====================================================================================================
