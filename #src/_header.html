@@ -52,6 +52,7 @@
 	<div id="scroll-progress"></div>
 </header>
 
+<!-- Мобильное меню -->
 <div class="header__mob-menu mob-menu">
 	<ul class="mob-menu__list">
 		<li><a href="#" class="menu__link">Пункт 1</a></li>
@@ -60,4 +61,13 @@
 		<li><a href="#" class="menu__link">Пункт 4</a></li>
 		<li><a href="#" class="menu__link">Пункт 5</a></li>
 	</ul>
+</div>
+
+<!-- Строка мобильного поиска -->
+<div class="header__search-mob search">
+	<form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ) ?>">
+		<input type="text" placeholder="Поиск" class="search__input input" value="<?php echo get_search_query() ?>" name="s"
+			id="s">
+		<button type="submit" tabindex="2" id="searchsubmit" class="sub-search" value=""></button>
+	</form>
 </div>

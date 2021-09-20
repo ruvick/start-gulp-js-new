@@ -7,7 +7,7 @@ const body = document.querySelector("body");
 const menuBody = document.querySelector(".mob-menu");
 const menuListItemElems = document.querySelector(".mob-menu__list");
 const mobsearch = document.querySelector(".mob-search");
-const headsearch = document.querySelector(".header__search");
+const headsearch = document.querySelector(".header__search-mob");
 
 //BURGER
 if (iconMenu) {
@@ -30,18 +30,18 @@ if (menuListItemElems) {
 // Строка поиска на мобилках 
 if (mobsearch) {
   mobsearch.addEventListener("click", function () {
-    headsearch.classList.toggle("active");
+    headsearch.classList.toggle("_active");
   });
 }
 
 // Закрытие моб меню при клике вне области меню 
 window.addEventListener('click', e => { // при клике в любом месте окна браузера
   const target = e.target // находим элемент, на котором был клик
-  if (!target.closest('.icon-menu') && !target.closest('.mob-menu') && !target.closest('.mob-search') && !target.closest('.header__search') && !target.closest('._popup-link') && !target.closest('.popup')) { // если этот элемент или его родительские элементы не окно навигации и не кнопка
+  if (!target.closest('.icon-menu') && !target.closest('.mob-menu') && !target.closest('.mob-search') && !target.closest('.header__search-mob') && !target.closest('._popup-link') && !target.closest('.popup')) { // если этот элемент или его родительские элементы не окно навигации и не кнопка
     iconMenu.classList.remove('active') // то закрываем окно навигации, удаляя активный класс
     menuBody.classList.remove('active')
     body.classList.remove('_lock')
-    headsearch.classList.remove('active')
+    headsearch.classList.remove('_active')
   }
 })
 
