@@ -120,20 +120,20 @@
 
 
 <!-- Радиокнопки -->
-<form class="block__form form-block" action="#">
-	<div class="form-block__item">
-		<div class="options">
-			<div class="option active">
-				Текст
-				<input type="radio" value="1" name="form[type]">
-			</div>
-			<div class="option">
-				Текст 2
-				<input type="radio" value="2" name="form[type]">
-			</div>
-		</div>
-	</div>
-</form>
+<div class="options">
+	<label class="options__item">
+		<input class="options__input" checked type="radio" value="1" name="form[option]">
+		<span class="options__text"><span>Text #1</span></span>
+	</label>
+	<label class="options__item">
+		<input class="options__input" type="radio" value="2" name="form[option]">
+		<span class="options__text"><span>Text #2</span></span>
+	</label>
+	<label class="options__item">
+		<input class="options__input" type="radio" value="3" name="form[option]">
+		<span class="options__text"><span>Text #3</span></span>
+	</label>
+</div>
 
 
 <!-- Переключатель -->
