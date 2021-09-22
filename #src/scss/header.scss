@@ -245,7 +245,8 @@
 // Строка мобильного поиска
 .header__search-mob {
 	position: fixed;
-  top: 35px;
+  // top: 35px;
+	top: -4%;
 	-webkit-transition: top 0.8s;
   -o-transition: top 0.8s;
   transition: top 0.8s; 
