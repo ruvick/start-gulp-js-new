@@ -63,7 +63,7 @@
 	}
 	// .popup__close
 	&__close {
-		position: absolute;
+		position: absolute; 
     top: 18px;
     right: 15px;
     cursor: pointer;
@@ -74,12 +74,12 @@
 	}
 }
 
-.popup__item picture {
-	width: 45%;
+.popup__img {
+	flex: 0 1 45%;
 }
 
 .popup__form-block {
-	width: 100%;
+	flex: 0 1 65%;
 	padding: 35px;
 }
 
