@@ -1,16 +1,17 @@
 .footer {
-  padding: 10px 0;
+  padding: 30px 0;
   background: #86A298;
 
   &__container {
     display: flex;
     align-items: center;
-    min-height: 200px;
+    // min-height: 200px;
   }
 
   &__row {
     width: 100%;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   &__menu {
@@ -35,19 +36,13 @@
     }
   }
 
-  &__link-social {
-    display: block;
-    margin-bottom: 15px;
-  }
-
   &__policy {
     font-size: 14px;
     line-height: 18px;
   }
 
   &__form {
-    max-width: 393px;
-    width: 100%;
+    flex: 0 1 393px;
     h3 {
       margin-bottom: 28px;
     }
