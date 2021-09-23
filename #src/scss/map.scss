@@ -2,9 +2,13 @@
 // Подключение карты
 // <div class="block__map" id="map"></div>
 
+#map {
+	background: url("../img/icons/loading.gif") center / 50px no-repeat;
+} 
+
 .map {
 	width: 100%;
-	height: 350px;}
+}
 
 // Монохромная карта
 // [class*="ymaps-2"][class*="-ground-pane"] {
