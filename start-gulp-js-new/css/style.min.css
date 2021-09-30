@@ -162,6 +162,12 @@ h4 {
   line-height: 38px;
 }
 
+.title {
+  text-align: center;
+  color: #222222;
+  margin-bottom: 38px;
+}
+
 @media (max-width: 768px) {
   h1 {
     font-size: 26px;
