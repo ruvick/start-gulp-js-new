@@ -282,6 +282,40 @@ body.ie {
 .swiper-button-lock {
 	display: none !important;
 }
+.swiper-button {
+	position: absolute;
+	top: 28%;
+	z-index: 5000;
+	width: 43px;
+	height: 43px;
+	border: 2px solid #fff;
+	border-radius: 50%;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+		&:before {
+		content: '';
+		float: left;
+		flex: 0 0 8px;
+		height: 12px;
+		background-size: 100%;
+		background-position: 0 0;
+		background-repeat: no-repeat;
+	}
+}
+.swiper-button-next {
+	left: 2%;
+		&:before {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iOCIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDggMTIiPg0KICA8aW1hZ2UgaWQ9ImNoZXZyb24tcmlnaHQiIHdpZHRoPSI4IiBoZWlnaHQ9IjEyIiB4bGluazpocmVmPSJkYXRhOmltYWdlL3BuZztiYXNlNjQsaVZCT1J3MEtHZ29BQUFBTlNVaEVVZ0FBQUFnQUFBQU1DQVlBQUFCZm52eWRBQUFBQkhOQ1NWUUlDQWdJZkFoa2lBQUFBRTVKUkVGVUdGZGovUC8vUHdNVzBBRVU0d2ZpTEVZc0NrQ1M1VkJOOXVnS2tDV3pnSXFtSXl2QWtBU1pBbE9BVlJLbUFLY2swUXBBQ3ZGYUFRc0d2STdFcVloUVFGbGlVd0J6RTRpdUFBQm9MVGhndUxFelFRQUFBQUJKUlU1RXJrSmdnZz09Ii8+DQo8L3N2Zz4NCg==');
+	}
+}
+.swiper-button-prev {
+	right: 2%;
+		&:before {
+    	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iOCIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDggMTIiPg0KICA8aW1hZ2UgaWQ9ImNoZXZyb24tcmlnaHQiIHdpZHRoPSI4IiBoZWlnaHQ9IjEyIiB4bGluazpocmVmPSJkYXRhOmltYWdlL3BuZztiYXNlNjQsaVZCT1J3MEtHZ29BQUFBTlNVaEVVZ0FBQUFnQUFBQU1DQVlBQUFCZm52eWRBQUFBQkhOQ1NWUUlDQWdJZkFoa2lBQUFBRXRKUkVGVUdGZGovUC8vUHdNUWRBQXhQeEJuQVRGWUFBWVlnUW9zZ0p6alVJRVo2SXBBQ2tCeW1VQThEWnNpbUFLY2lwQVZZRldFcmdCREVja0tNQnhMdENQeGVwT29nTUlaMUFEcjlVRVpZdlZ1b3dBQUFBQkpSVTVFcmtKZ2dnPT0iLz4NCjwvc3ZnPg0K');
+	}
+}
 //====================================================================================================
 
 // Табы

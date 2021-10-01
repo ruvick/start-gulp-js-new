@@ -63,22 +63,21 @@ function sliders_bild_callback(params) { }
 
 // Сюда пишем класс нашего слайдера и меняем переменную
 let slider = new Swiper('.slider', {
-	/*
-	effect: 'fade',
+	// effect: 'fade',
 	autoplay: {
 		delay: 3000,
 		disableOnInteraction: false,
 	},
-	*/
+
 	observer: true,
 	observeParents: true,
 	slidesPerView: 1,
 	spaceBetween: 0,
 	autoHeight: true,
-	speed: 800,
+	speed: 2000,
 	//touchRatio: 0,
 	//simulateTouch: false,
-	//loop: true,
+	loop: true,
 	//preloadImages: false,
 	//lazy: true,
 	// Dotts
@@ -88,8 +87,8 @@ let slider = new Swiper('.slider', {
 	//},
 	// Arrows
 	navigation: {
-		nextEl: '.about__more .more__item_next',
-		prevEl: '.about__more .more__item_prev',
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
 	},
 	/*
 	breakpoints: {
