@@ -71,8 +71,9 @@
 	}
 }
 .header__contacts {
-	flex: 0 0 215px;
+	flex: 0 0 190px;
 	flex-direction: column;
+	align-items: flex-end;
 }
 .header__phone {
 	font-size: 23px;
