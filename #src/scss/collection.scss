@@ -31,72 +31,66 @@
 }
 
 // Карточки товаров ====================================================================================================================================================
-.prod-card {
-	// .prod-card__body
-	// margin: 0 -8.5px;
-	justify-content: space-between;
+.card__row {
+	flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.card {
+  &__col {
+  	display: flex;
+  	flex: 0 1 33.333%;
+  	padding: 0 15px;
+  }
 	&__body {
-		// max-width: 252px;
-		// width: 100%;
-		// padding: 20px 20px 18px 22px;
-		padding: 15px 20px 15px 22px;
+		flex: 0 1 100%;
 		flex-direction: column;
-		border: 0.4px solid #c7c9cb;
-		flex: 0 1 19%;
+		border-radius: 10px;
+    background: #fff;
+    overflow: hidden;
+    margin-bottom: 30px;
 	}
-	// .prod-card__link
-	&__link {
-		// margin: 0 auto 32px auto;
-		margin: 0 auto 13px auto;
-		flex: 1 1 auto;
-		overflow: hidden;
-		position: relative;
-		img {
-			max-width: 100%;
-			max-height: 195px;
-			flex: 0 0 175px;
-		}
+	&__img-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-bottom: 1px solid #e8e8e8;
+    background: #fff;
 	}
-	&__sale {
-		position: absolute;
-		z-index: 5;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		font-weight: 500;
-		width: 40px;
-		height: 31px;
-		background: #8abb2a;
-		color: #fff;
-		margin-top: 4px;
+	&__img-item {
+		height: 280px;
+    overflow: hidden;
 	}
 	&__text {
-		h4 {
-			line-height: 18px;
-			margin-bottom: 10px;
-			// .prod-card__manuf
-		}
+		display: flex;
+    flex-direction: column;
+		flex: 1 1 auto;
+		padding: 30px 30px 15px 30px;
 	}
-	&__manuf {
-		line-height: 18px;
-		color: #8a7165;
-		margin-bottom: 10px;
+	&__title {
+		font-family: Circe;
+		font-size: 18px;
+		line-height: 1.2;
+		font-weight: 400;
+		color: #a59d8a;
+		flex: 1 1 auto;
+		margin-bottom: 20px;
 	}
-	// .prod-card__avail
-	&__avail {
-		line-height: 18px;
-		color: #d3820f;
-		margin-bottom: 14.5px;
-	}
-	// .prod-card__price-item
-	&__price-item {
-		justify-content: space-between;
-		align-items: center;
-	}
-	// .prod-card__price
 	&__price {
-		font-size: 20px;
-		font-weight: 600;
+		font-family: 'Europe Ext';
+		font-size: 30px;
+		line-height: 1.2;
+		font-weight: 700;
+		color: #000000;
+	}
+	&__btn {
+		padding: 0 30px 25px 30px;
+		justify-content: space-between;
+		align-items: flex-end;
+	}
+	&__btn-link {
+		
 	}
 }
 // =============================================================================================================================================================
