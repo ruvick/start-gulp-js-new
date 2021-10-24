@@ -61,6 +61,12 @@
 	&__img-item {
 		height: 280px;
     overflow: hidden;
+    img {
+    	transition: 1s;
+    }
+    img:hover {
+    	transform: scale(1.1);
+    }
 	}
 	&__text {
 		display: flex;
