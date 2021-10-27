@@ -53,31 +53,31 @@
 .search {
 	position: relative;
 	width: 100%;
+	height: 30px;
 }
 .search__input {
  font-size: 12px;
  font-weight: 300;
- height: 30px;
  color: #464749;
  padding-left: 14px;
  border: 1px solid #e0e1e3 !important;
  border-radius: 5px !important;
 }
-.sub-search {
+.search__btn {
  background-color: transparent;
  border: none;
-}
-.sub-search:after {
- content: "";
- position: absolute;
- top: 8px;
- right: 8px;
- width: 17px;
- height: 17px;
- background-position: 0 0;
- background-repeat: no-repeat;
- background-size: 100%;
- background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNy4xMDQiIGhlaWdodD0iMTcuMSIgdmlld0JveD0iMCAwIDE3LjEwNCAxNy4xIj4NCiAgPHBhdGggaWQ9ItCa0L7QvdGC0YPRgF85IiBkYXRhLW5hbWU9ItCa0L7QvdGC0YPRgCA5IiBkPSJNMTQzMC4wMjMsMTE5LjI1M2E2LjI2NSw2LjI2NSwwLDAsMCwxMC4yMzIsNC44NDlsLjA2NC0uMDUyLDUuODg1LDUuODg1YS41NTMuNTUzLDAsMCwwLC43NjUsMCwuNTQyLjU0MiwwLDAsMCwwLS43NjZsLTUuODMtNS44My0uMDU4LS4wNTguMDUyLS4wNjNhNi4yNjMsNi4yNjMsMCwxLDAtMTEuMTEtMy45NjVabTEuMDgsMGE1LjE4MSw1LjE4MSwwLDEsMSw1LjE4MSw1LjE4MUE1LjE4Nyw1LjE4NywwLDAsMSwxNDMxLjEsMTE5LjI1M1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNDMwLjAyMyAtMTEyLjk4OSkiIGZpbGw9IiNkMzgyMGYiLz4NCjwvc3ZnPg0K);
+ 	&:before {
+ 		content: "";
+ 		position: absolute;
+ 		top: 8px;
+ 		right: 8px;
+ 		width: 17px;
+ 		height: 17px;
+ 		background-position: 0 0;
+ 		background-repeat: no-repeat;
+ 		background-size: 100%;
+ 		background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNy4xMDQiIGhlaWdodD0iMTcuMSIgdmlld0JveD0iMCAwIDE3LjEwNCAxNy4xIj4NCiAgPHBhdGggaWQ9ItCa0L7QvdGC0YPRgF85IiBkYXRhLW5hbWU9ItCa0L7QvdGC0YPRgCA5IiBkPSJNMTQzMC4wMjMsMTE5LjI1M2E2LjI2NSw2LjI2NSwwLDAsMCwxMC4yMzIsNC44NDlsLjA2NC0uMDUyLDUuODg1LDUuODg1YS41NTMuNTUzLDAsMCwwLC43NjUsMCwuNTQyLjU0MiwwLDAsMCwwLS43NjZsLTUuODMtNS44My0uMDU4LS4wNTguMDUyLS4wNjNhNi4yNjMsNi4yNjMsMCwxLDAtMTEuMTEtMy45NjVabTEuMDgsMGE1LjE4MSw1LjE4MSwwLDEsMSw1LjE4MSw1LjE4MUE1LjE4Nyw1LjE4NywwLDAsMSwxNDMxLjEsMTE5LjI1M1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNDMwLjAyMyAtMTEyLjk4OSkiIGZpbGw9IiNkMzgyMGYiLz4NCjwvc3ZnPg0K);
+	}
 }
 //</SEARCH>====================================================================================================
 
