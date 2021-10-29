@@ -37,7 +37,7 @@
 }
 
 .card {
-  &__col {
+  &__column {
   	display: flex;
   	flex: 0 1 33.333%;
   	padding: 0 15px;
@@ -50,7 +50,7 @@
     overflow: hidden;
     margin-bottom: 30px;
 	}
-	&__img-block {
+	&__img-inner {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,7 +58,7 @@
     border-bottom: 1px solid #e8e8e8;
     background: #fff;
 	}
-	&__img-item {
+	&__img {
 		height: 280px;
     overflow: hidden;
     img {

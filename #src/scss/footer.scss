@@ -4,7 +4,7 @@
   // .footer__container
   &__container {
     display: flex;
-    align-items: center;
+    align-items: center; 
   }
   // .footer__row
   &__row {
@@ -16,15 +16,15 @@
   &__logo {}
   // .footer__menu
   &__menu {}
-  // .footer__item
-  &__item {
+  // .footer__item 
+  &__menu-item {
     margin-bottom: 10px;
       &:last-child {
         margin-bottom: 0;
       }
   }
   // .footer__link
-  &__link {}
+  &__menu-item-link {}
   // .footer__contact
   &__contact {}
   // .footer__form
