@@ -220,6 +220,14 @@ textarea.input {
 ::-moz-placeholder          {color: #8584847a;}/* Firefox 19+ */
 :-moz-placeholder           {color: #8584847a;}/* Firefox 18- */
 :-ms-input-placeholder      {color: #8584847a;}
+
+// Убираем стрелки у цифрового инпута
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
 //</INPUT>====================================================================================================
 
 //<CHECK (chk+tab)>====================================================================================================
@@ -454,6 +462,7 @@ textarea.input {
 			font-size: 12px;
 			width: 100%;
 			text-align: center;
+			outline: none; 
 		}
 	}
 }

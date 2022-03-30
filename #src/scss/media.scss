@@ -46,6 +46,8 @@
 		padding: 20px 0 !important;}
 	.title {
 		margin-bottom: 15px;}
+	::-webkit-scrollbar {
+    display: none;}
 }
 
 @media (max-width: 700px) {

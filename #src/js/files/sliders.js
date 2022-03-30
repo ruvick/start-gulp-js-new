@@ -72,17 +72,19 @@ let slider = new Swiper('.slider', {
 	observer: true,
 	observeParents: true,
 	slidesPerView: 1,
-	spaceBetween: 0,
+	spaceBetween: 0, //отступ в пикселях
 	autoHeight: true,
 	speed: 2000,
 	//touchRatio: 0,
 	//simulateTouch: false,
-	loop: true,
+	loop: true, //циклично
+	// slidesPerGroup: 3, //по 3 слайда
+	// slideToClickedSlide: true, //клик по слайду
 	//preloadImages: false,
 	//lazy: true,
 	// Dotts
 	//pagination: {
-	//	el: '.slider-quality__pagging',
+	//	el: '.swiper-paggination',
 	//	clickable: true,
 	//},
 	// Arrows
