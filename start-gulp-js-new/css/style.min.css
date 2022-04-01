@@ -3012,7 +3012,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   position: relative;
   z-index: 5000;
   padding: 10px 0;
-  background: green;
+  background: #86A298;
 }
 .header__row {
   align-items: center;
@@ -3354,7 +3354,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 .page {
   flex: 1 1 auto;
-  padding-top: 80px;
 }
 
 @media (max-width: 1200px) {
