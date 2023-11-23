@@ -27,9 +27,9 @@ $minWidth: 320px;
 $maxWidth: 1920;
 $maxWidthContainer: 1170;
 $md1: $maxWidthContainer+12;
-$md2: 991.98;
-$md3: 767.98;
-$md4: 479.98;
+$md2: 1024;
+$md3: 768;
+$md4: 375;
 
 $mainColor: #000;
 
@@ -124,16 +124,17 @@ h4 {
 ._container {
 	max-width: $maxWidthContainer + px;
 	margin: 0 auto;
-	// @media (max-width: $md1 + px) {
-	// 	max-width: 970px;
-	// }
-	// @media (max-width: $md2+px) {
-	// 	max-width: 750px;
-	// }
-	// @media (max-width: $md3+px) {
-	// 	max-width: none;
-	// 	padding: 0 10px;
-	// }
+	@media (max-width: $md1 + px) {
+		max-width: 970px;
+	}
+	@media (max-width: $md2+px) {
+		max-width: 750px;
+	}
+	@media (max-width: $md3+px) {
+		max-width: none;
+		padding: 0 10px;
+	}
+	
 }
 
 //</ОСНОВНАЯ СЕТКА>===========================================================================================================
@@ -144,18 +145,18 @@ h4 {
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
 
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
-//@import "../../js/fancybox/jquery.fancybox";
-@import "datepicker";
-@import "lightgallery";
-//@import "popover.min";
-//@import "baguetteBox";
+// @import "../../js/fancybox/jquery.fancybox";
+// @import "datepicker";
+// @import "lightgallery";
+// @import "popover.min";
+// @import "baguetteBox";
 // @import "fancybox.min";
-//@import "pagging";
+// @import "pagging";
 // @import "map";
 // @import "slider-index";
 // @import "catalog";
 // @import "collection";
-@import "tippy";
+// @import "tippy";
 @import "nouislider";
 @import "popup";
 @import "header";
@@ -185,14 +186,20 @@ h4 {
 	background-image: url('../img/main-banner');
 }
 
-.main-banner__title {}
+.main-banner__title {
+	@include adaptiv-value("font-size", 80,12 ,1 );
+@include adaptiv-value("padding-bottom", 60, 20, 100, 200, 0);
+}
 
-.main-banner__subtitle {}
+.main-banner__subtitle {
+
+}
 
 //========================================================================================================================================================
+
 
 
 //</ОСНОВНОЙ БЛОК>====================================================================================================
 
 //<Адаптив>===========================================================================================================================================
-@import "media";
+// @import "media";
