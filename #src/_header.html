@@ -1,79 +1,86 @@
-<header id="header" class="header">
-	<div class="header__container _container">
+<header class="header">
+	<div class="header__wrapper">
+		<div class="header__container _container">
 
-		<div class="header__row d-flex">
+			<div class="header__body">
 
-			<a href="index.html" class="logo-icon header__logo">
-				<!-- <? bloginfo("url"); ?> -->
-				<p class="logo-icon__text">Название <span>текст logo</span></p>
-			</a>
-
-			<div class="header__navigation">
-				<div class="header__menu-block"> 
-					<ul class="menu-list header__menu-list d-flex"> 
-						<li class="menu-list__item"><a href="#" class="menu-list__link">Пункт 1</a></li>
-						<li class="menu-list__item"><a href="#" class="menu-list__link">Пункт 2</a></li>
-						<li class="menu-list__item"><a href="#" class="menu-list__link">Пункт 3</a></li>
-						<li class="menu-list__item"><a href="#" class="menu-list__link">Пункт 4</a></li>
-						<li class="menu-list__item"><a href="#" class="menu-list__link">Пункт 5</a></li>
-					</ul>
-					<!-- <?php wp_nav_menu( array('theme_location' => 'menu_main','menu_class' => 'menu__list',
-						'container_class' => 'menu__list','container' => false )); ?>  -->
-
-						<div class="search header__search">
-							<form role="search" method="get" action="<?php echo home_url( '/' ) ?>" id="searchform" class="search__form">
-								<input type="text" placeholder="Поиск" class="search__input input"
-								value="<?php echo get_search_query() ?>" name="s" id="s">
-								<button type="submit" tabindex="2" value="" id="searchsubmit" class="search__btn"></button>
-							</form>
-						</div>
-					</div>
-					<button class="mob-search-btn header__mob-search-btn"></button>
-
-					<div class="contacts header__contacts d-flex">
-						<a href="tel:84951700000" class="contacts__phone header__phone">8 (495) 170-00-00</a>
-						<!-- <a href="tel:<? echo preg_replace('/[^0-9]/', '', $tel); ?>"><? echo $tel = carbon_get_theme_option("as_phone_1"); ?></a> -->
-						<p class="contacts__time-phone header__time-phone">Звонить с 08:00 до 22:00</p>
-						<a href="#callback" class="header__popup-link _popup-link">ЗАКАЗАТЬ ЗВОНОК</a>
-					</div>
-					<a href="tel:84951700000" class="mob-phone-icon header__mob-phone-icon"></a>
-					<!-- <a href="tel:<? echo preg_replace('/[^0-9]/', '', $tel); ?>" class="mob-callback__phone"></a> -->
-
-					<a href="#" class="bascket-icon"><span class="bascket-icon__number bascet_counter">1</span></a>
-
-					<div class="icon-menu" aria-label="Бургер меню"> 
-						<span></span>
-						<span></span>
-						<span></span>
+				<div class="header__main">
+					<a href="#" class="header__logo">Funiro.</a>
+					<div class="header__menu menu">
+						<nav class="menu__body">
+							<ul class="menu__list">
+								<li class="menu__item"><a href="" class="menu__link">Products</a>
+									<button data-spoller type="button" class="menu__arrow _icon-arrow-down"></button>
+									<ul class="menu__sub-list">
+										<li class="menu__sub-item">
+											<a href="" class="menu__sub-link">Product #1</a>
+										</li>
+										<li class="menu__sub-item">
+											<a href="" class="menu__sub-link">Product #2</a>
+										</li>
+										<li class="menu__sub-item">
+											<a href="" class="menu__sub-link">Product #3</a>
+										</li>
+										<li class="menu__sub-item">
+											<a href="" class="menu__sub-link">Product #4</a>
+										</li>
+									</ul>
+								</li>
+								<li class="menu__item"><a href="" class="menu__link">Rooms</a>
+									<button data-spoller type="button" class="menu__arrow _icon-arrow-down"></button>
+									<ul class="menu__sub-list">
+										<li class="menu__sub-item">
+											<a href="" class="menu__sub-link">Room #1</a>
+										</li>
+										<li class="menu__sub-item">
+											<a href="" class="menu__sub-link">Room #2</a>
+										</li>
+										<li class="menu__sub-item">
+											<a href="" class="menu__sub-link">Room #3</a>
+										</li>
+										<li class="menu__sub-item">
+											<a href="" class="menu__sub-link">Room #4</a>
+										</li>
+									</ul>
+								</li>
+								<li class="menu__item"><a href="" class="menu__link">Inspirations</a></li>
+							</ul>
+						</nav>
 					</div>
 				</div>
+
+				<div class="header__search">
+					<div class="search-form">
+						<button type="button" class="search-form__icon _icon-search"></button>
+						<form action="#" class="search-form__item">
+							<button type="submit" class="search-form__btn _icon-search"></button>
+							<input autocomplete="off" type="text" name="form[]" data-error="Ошибка"
+								data-value="Search for minimalist chair" class="search-form__input">
+						</form>
+					</div>
+				</div>
+
+				<div class="header__actions actions-header">
+					<a href="#" class="actions-header__item actions-header__item_favorites _icon-favorite"></a>
+					<div class="actions-header__item cart-header">
+						<a href="#" class="cart-header__icon _icon-cart"></a>
+						<div class="cart-header__body">
+							<ul class="cart-header__list cart-list"></ul>
+						</div>
+					</div>
+					<a href="#" class="actions-header__item actions-header__item_user _ibg">
+						<img src="img/avatar.jpg" alt="Avatar">
+					</a>
+				</div>
+
+				<button type="button" class="icon-menu">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
 
 			</div>
 
 		</div>
-		<!-- Полоса прокрутки в шапке -->
-		<div id="scroll-progress"></div>
-	</header>
-
-	<!-- Мобильное меню -->
-	<div class="mob-menu header__mob-menu">
-		<ul class="mob-menu__list">
-			<li class="mob-menu__item"><a href="#" class="mob-menu__link">Пункт 1</a></li> 
-			<li class="mob-menu__item"><a href="#" class="mob-menu__link">Пункт 2</a></li>
-			<li class="mob-menu__item"><a href="#" class="mob-menu__link">Пункт 3</a></li>
-			<li class="mob-menu__item"><a href="#" class="mob-menu__link">Пункт 4</a></li>
-			<li class="mob-menu__item"><a href="#" class="mob-menu__link">Пункт 5</a></li>
-		</ul>
-	<!-- <?php wp_nav_menu( array('theme_location' => 'menu_main','menu_class' => 'mob-menu__list',
-		'container_class' => 'mob-menu__list','container' => false )); ?>  -->
-		<a href="#callback" class="header__popup-link header__popup-link_mob _popup-link">ЗАКАЗАТЬ ЗВОНОК</a>
 	</div>
-
-	<!-- Строка мобильного поиска -->
-	<div class="search header__search-mob">
-		<form role="search" method="get" action="<?php echo home_url( '/' ) ?>" id="searchform" class="search__form">
-			<input type="text" class="search__input input" placeholder="Поиск" value="<?php echo get_search_query() ?>" name="s"
-			id="s">
-			<button type="submit" id="searchsubmit" class="search__btn" tabindex="2" value=""></button>
-		</form>
-	</div>
+</header>
