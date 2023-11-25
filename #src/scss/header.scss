@@ -37,6 +37,11 @@
 	}
 
 	&__search {
+		@include adaptiv-value("padding-right", 32, 15, 1);
+		// от 992px и выше, поиск растягивается на всю ширину и придавливает блок acrions, ниже 992px поиск скрываем
+		@media (min-width: 992px){
+			  flex: 1 1 100%;
+		}
 	}
 
 	&__actions {
@@ -49,7 +54,7 @@
 	}
 
 	&__list {
-		@media (min-width: 769px){
+		@media (min-width: 768px){
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: space-evenly;
@@ -72,9 +77,33 @@
 					visibility: visible;
 					pointer-events: auto;
 				}
+				.menu__arrow {
+					transform: rotate(-180deg);
+				}
+				.menu__arrow,
+				.menu__link {
+					color: $orangeColor;
+				}
 			  }
 		}
-	}
+		@media (min-width: 768px){
+			  &._hover {
+				.menu__sub-list {
+					transform: translate(0px, 0px);
+					opacity: 1;
+					visibility: visible;
+					pointer-events: auto;
+				}
+				.menu__arrow {
+					transform: rotate(-180deg);
+				}
+				.menu__arrow,
+				.menu__link {
+					color: $orangeColor;
+				}
+			  }
+			}
+		}
 
 	&__link {
 		font-weight: 500;
@@ -93,7 +122,7 @@
 		background-color: $orangeColor;
 		padding: 15px;
 		flex: 1 1 100%;
-		@media (min-width: 769px){
+		@media (min-width: 768px){
 			//Скрываем меню
 			opacity: 0;
 			visibility: hidden;
@@ -103,6 +132,7 @@
 			position: absolute;
 			left: 0;
 			top: 100%;
+			z-index: 5;
 			pointer-events: none;
 		}
 	}
@@ -119,24 +149,55 @@
 	}
 }
 .search-form {
-
+max-width: 473px;
 	&__icon {
+		display: none;
 	}
 
 	&__item {
+		display: flex;
+		align-items: center;
+		background-color: #fff;
 	}
 
 	&__btn {
+		flex: 0 0 45px;
+		height: 45px;
+		font-size: 15px;
+		color: #333;
 	}
 
 	&__input {
+		font-size: 14px;
+		color: $darkGrayColor;
+		width: 100%;
+		padding: 0px 20px 0px 0px;
 	}
 }
 .actions-header {
-
+	position: relative;
+	z-index: 5;
+	// Ставим элементы в ряд, независимо от того, сколько их
+	display: grid;
+	grid-template-columns: auto;
+	grid-auto-flow: column;
+	align-items: center;
+	// Когда будем уменьшать экран, отступ между элементами, будет очень большой. Поэтому используем адаптивное свойство.
+	// Миксин, который встроен в шаблон, позволяет указать изначальное значение любого свойства и конечное значение на 320px. 
+	// Это свойство будет динамически менятся. 32px стартовое значение, в конечном значении это будет 15px, и параметр 1 говорит о том, что 
+	// необходимо начать изменять это свойство, в тот момент, когда ширина экрана меньше чем ограничивающий контейнер.
+	@include adaptiv-value("gap", 32, 15, 1);
 	&__item {
 
 		&_favorites {
+			color: #262f56;
+			font-size: 24px;
+			transition: color 0.3s ease 0s;
+			@media (any-hover: hover){
+				 &:hover { 
+				  color: $orangeColor;
+			  } 
+			}
 		}
 
 		&_user {
@@ -146,8 +207,31 @@
 .cart-header {
 
 	&__icon {
+		color: #262f56;
+		font-size: 24px;
+		transition: color 0.3s ease 0s;
+		position: relative;
+		display: block;
+		@media (any-hover: hover){
+			 &:hover { 
+			  color: $orangeColor;
+		  } 
+		}
+		span {
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			top: -10px;
+			right: -10px;
+			border-radius: 50%;
+			background-color: $orangeColor;
+			color: #fff;
+			font-size: 12px;
+		}
 	}
-
 	&__body {
 	}
 
