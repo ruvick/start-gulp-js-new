@@ -93,6 +93,10 @@ let sliderBg = new Swiper('.slider-bg', {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev',
 	},
+	// navigation: {
+	// 	nextEl: '.slider-rooms .slider-arrow_next',
+	// 	prevEl: '.slider-rooms .slider-arrow_prev',
+	// },
 	/*
 	breakpoints: {
 		320: {
