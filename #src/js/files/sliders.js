@@ -70,15 +70,17 @@ let sliderBg = new Swiper('.slider-bg', {
 
 	observer: true,
 	observeParents: true,
+	// slidesPerView: 'auto', // Чтобы слайдер сам не указывал ширину слайдам. Будем управлять в стилях.
 	slidesPerView: 1,
 	spaceBetween: 0, //отступ в пикселях
 	autoHeight: true,
 	speed: 2000,
+	parallax: true,
 	//touchRatio: 0,
 	//simulateTouch: false,
 	loop: true, //циклично
 	// slidesPerGroup: 3, //по 3 слайда
-	// slideToClickedSlide: true, //клик по слайду
+	// slideToClickedSlide: true, //клик по слайду 
 	//preloadImages: false,
 	//lazy: true,
 	// Dotts
