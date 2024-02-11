@@ -1,14 +1,13 @@
 {
-	"name": "ruvick_start_gulp",
+	"name": "ruvick-start-gulp",
 	"version": "1.0.0",
-	"description": "Start template with Gulp",
+	"description": "Starter template for vertski with gulp builder",
 	"author": "ruvick",
 	"private": true,
 	"license": "GNU General Public License (GPL)",
 	"scripts": {
-		"send_to_host": "cd strakhovaniye-ipoteki && scp -C -r * propusw6_asmi@propusw6.beget.tech:ipoteka-strah.ru/public_html",
-		"send_sender": "cd #src && scp sender.php propusw6_asmi@propusw6.beget.tech:ipoteka-strah.ru/public_html",
-		"send_sender_call": "cd #src && scp sender-callback.php propusw6_asmi@propusw6.beget.tech:ipoteka-strah.ru/public_html",
+		"send_to_host": "cd rudikov-web_gulp && scp -C -r * j55818351.myjino.ru@j55818351_rv-studio:domains/rv-studio.ru",
+		"send_sender": "cd #src && scp sender.php j55818351.myjino.ru@j55818351_rv-studio:domains/rv-studio.ru",
 		"deploy": "gulp build && npm run send_to_host"
 	},
 	"devDependencies": {

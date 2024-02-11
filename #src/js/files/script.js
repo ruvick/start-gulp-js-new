@@ -2,48 +2,93 @@
 // document.addEventListener('DOMContentLoaded', () => {
 // });
 
-const iconMenu = document.querySelector(".icon-menu");
-const body = document.querySelector("body");
-const menuBody = document.querySelector(".mob-menu");
-const menuListItemElems = document.querySelector(".mob-menu__list");
-const mobsearch = document.querySelector(".header__mob-search-btn");
-const headsearch = document.querySelector(".header__search-mob");
+// Вешаем обработчик события click. Прослушивать событие click будем на всем документе.
+// Мы будем прослушивать весь документ. Вычислять нужные для нас обьекты и с ними работать.
 
-//BURGER
-if (iconMenu) {
-	iconMenu.addEventListener("click", function () {
-		iconMenu.classList.toggle("active");
-		body.classList.toggle("_lock");
-		menuBody.classList.toggle("active");
-	});
-}
+window.onload = function () { // Функция будет срабатывать, когда весь контент на странице загрузится
 
-// Закрытие моб меню при клике на якорную ссылку
-if (menuListItemElems) {
-	menuListItemElems.addEventListener("click", function () {
-		iconMenu.classList.toggle("active");
-		body.classList.toggle("_lock");
-		menuBody.classList.toggle("active");
-	});
-}
+	document.addEventListener("click", documentActions);
 
-// Строка поиска на мобилках 
-if (mobsearch) {
-	mobsearch.addEventListener("click", function () {
-		headsearch.classList.toggle("_active");
-	});
-}
+	function documentActions(e) {
 
-// Закрытие моб меню при клике вне области меню 
-window.addEventListener('click', e => { // при клике в любом месте окна браузера
-	const target = e.target // находим элемент, на котором был клик
-	if (!target.closest('.icon-menu') && !target.closest('.mob-menu') && !target.closest('.header__mob-search-btn') && !target.closest('.header__search-mob') && !target.closest('._popup-link') && !target.closest('.popup')) { // если этот элемент или его родительские элементы не окно навигации и не кнопка
-		iconMenu.classList.remove('active') // то закрываем окно навигации, удаляя активный класс
-		menuBody.classList.remove('active')
-		body.classList.remove('_lock')
-		headsearch.classList.remove('_active')
+		const targetElement = e.target;
+
+		// Пишем скрипт для меню, который будет работать на экранах, шире 768px и только на тачскринах
+		// Для этого пишем условие. И если нам нужно чтобы мы работали только на устройствах с тачсринами, то мы пишем функцию isMobile.any(). Эта функция вернет tru, 
+		// наш сайт открыт на устройствах с тачскрином и соответственно false, если нет.
+		// if (window.innerWidth > 768 && isMobile.any()) {
+
+		// if (targetElement.classList.contain('icon-menu')) {
+		// 	// Достучатся до родителя обьекта с классом menu__arrow с помощью closest
+		// 	targetElement.closest('.icon-menu').classList.toggle('active');
+		// }
+
+		if (targetElement.classList.closest('mob-search-btn')) {
+			// Достучатся до родителя обьекта с классом menu__arrow с помощью closest
+			targetElement.closest('.header__navigation').classList.toggle('search');
+		}
+
+		// }
+
 	}
-})
+
+	// Обращение к элементу через document
+	if (document.querySelector('.filter-catalog__title')) {
+		document.querySelector('.filter-catalog__title').addEventListener("click", function (e) {
+			if (window.innerWidth < 992) {
+				document.querySelector('.filter-catalog__items').classList.toggle('._active');
+			}
+		});
+	}
+
+}
+
+// Actions (делегирование события click)
+
+// const iconMenu = document.querySelector(".icon-menu");
+// const body = document.querySelector("body");
+// const menuBody = document.querySelector(".mob-menu");
+// const menuListItemElems = document.querySelector(".mob-menu__list");
+// const mobsearch = document.querySelector(".header__mob-search-btn");
+// const headsearch = document.querySelector(".header__search-mob");
+
+// //BURGER
+// if (iconMenu) {
+// 	iconMenu.addEventListener("click", function () { 
+// 		iconMenu.classList.toggle("active");
+// 		body.classList.toggle("_lock");
+// 		menuBody.classList.toggle("active");
+// 	});
+// }
+
+// // Закрытие моб меню при клике на якорную ссылку
+// if (menuListItemElems) {
+// 	menuListItemElems.addEventListener("click", function () {
+// 		iconMenu.classList.toggle("active");
+// 		body.classList.toggle("_lock");
+// 		menuBody.classList.toggle("active");
+// 	});
+// }
+
+// // Строка поиска на мобилках 
+// if (mobsearch) {
+// 	mobsearch.addEventListener("click", function () {
+// 		headsearch.classList.toggle("_active");
+// 	});
+// }
+
+// // Закрытие моб меню при клике вне области меню 
+// window.addEventListener('click', e => { // при клике в любом месте окна браузера
+// 	const target = e.target // находим элемент, на котором был клик
+// 	if (!target.closest('.icon-menu') && !target.closest('.mob-menu') && !target.closest('.header__mob-search-btn') && !target.closest('.header__search-mob') && !target.closest('._popup-link') && !target.closest('.popup')) { // если этот элемент или его родительские элементы не окно навигации и не кнопка
+// 		iconMenu.classList.remove('active') // то закрываем окно навигации, удаляя активный класс
+// 		menuBody.classList.remove('active')
+// 		body.classList.remove('_lock')
+// 		headsearch.classList.remove('_active')
+// 	}
+// })
+//========================================================================================================================================================
+
 
 // Плавная прокрутка
 const smotScrollElems = document.querySelectorAll('a[href^="#"]:not(a[href="#"])');
@@ -89,33 +134,33 @@ tippy('._tippy', {
 
 
 // Поочередное открытие нескольких блоков меню, табы, либо что то еще
-const BarIconElems = document.querySelectorAll('.sidebar__menu-open');
-const BarLinkIconElems = document.querySelectorAll('.sidebar__menu-icon');
-const BarSubMenuElems = document.querySelectorAll('.sidebar__submenu');
+// const BarIconElems = document.querySelectorAll('.sidebar__menu-open');
+// const BarLinkIconElems = document.querySelectorAll('.sidebar__menu-icon');
+// const BarSubMenuElems = document.querySelectorAll('.sidebar__submenu');
 
-BarIconElems.forEach((btn, index) => {
-	btn.addEventListener('click', () => {
+// BarIconElems.forEach((btn, index) => {
+// 	btn.addEventListener('click', () => {
 
-		if (!btn.classList.contains('sidebar__menu-icon_active')) {
+// 		if (!btn.classList.contains('sidebar__menu-icon_active')) {
 
-			BarSubMenuElems.forEach((BarSubMenuElem) => {
-				BarSubMenuElem.classList.remove('active')
-			});
-			BarIconElems.forEach((BarIconElem) => {
-				BarIconElem.classList.remove('sidebar__menu-icon_active')
-			});
-			BarLinkIconElems.forEach((BarLinkIconElem) => {
-				BarLinkIconElem.classList.remove('sidebar__menu-icon_active')
-			});
+// 			BarSubMenuElems.forEach((BarSubMenuElem) => {
+// 				BarSubMenuElem.classList.remove('active')
+// 			});
+// 			BarIconElems.forEach((BarIconElem) => {
+// 				BarIconElem.classList.remove('sidebar__menu-icon_active')
+// 			});
+// 			BarLinkIconElems.forEach((BarLinkIconElem) => {
+// 				BarLinkIconElem.classList.remove('sidebar__menu-icon_active')
+// 			});
 
-			BarSubMenuElems[index].classList.add('active')
-			BarLinkIconElems[index].classList.add('sidebar__menu-icon_active')
-			btn.classList.add('sidebar__menu-icon_active')
-		} else {
-			BarSubMenuElems[index].classList.remove('active')
-			BarLinkIconElems[index].classList.remove('sidebar__menu-icon_active')
-			btn.classList.remove('sidebar__menu-icon_active')
-		}
-	})
-})
+// 			BarSubMenuElems[index].classList.add('active')
+// 			BarLinkIconElems[index].classList.add('sidebar__menu-icon_active')
+// 			btn.classList.add('sidebar__menu-icon_active')
+// 		} else {
+// 			BarSubMenuElems[index].classList.remove('active')
+// 			BarLinkIconElems[index].classList.remove('sidebar__menu-icon_active')
+// 			btn.classList.remove('sidebar__menu-icon_active')
+// 		}
+// 	})
+// })
 
